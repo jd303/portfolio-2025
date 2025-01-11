@@ -1,0 +1,26 @@
+:root {
+	--padding-standard: 12px;
+	--zindex-base: 1;
+	--zindex-content: 50;
+	--zindex-overlay: 100;
+	--border-radius-standard: 5px;
+	--colour-primary: rgb(25, 214, 190);
+	--colour-secondary: rgb(125, 91, 166);
+	--colour-dark: rgb(30, 30, 30);
+	--background-colour: #222;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	color: var(--colour-dark);
+	font-family: Montserrat, sans-serif;
+	font-weight: 200;
+	background-color: var(--colour-primary);
+}
+
+#root {
+	height: 100%;
+}
