@@ -1,4 +1,10 @@
 .highlight {
 	color: var(--colour-dark);
 	font-weight: 500;
+	margin: 0 8px;
+	cursor: pointer;
+
+	&:hover, &.selected {
+		text-decoration: underline;
+	}
 }

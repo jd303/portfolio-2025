@@ -1,0 +1,47 @@
+.timeline-segment {
+	position: relative;
+	display: block;
+	padding: var(--padding-standard) 0 var(--padding-standard) calc(9 * var(--padding-standard));
+
+	& .pipe {
+		position: absolute;
+		left: calc(5 * var(--padding-standard));
+		top: 0;
+		width: calc(2 * var(--padding-standard));
+		height: 100%;
+		background-color: var(--colour-secondary);
+	}
+
+	&:nth-child(2n) {
+		& .pipe {
+			opacity: 0.6;
+		}
+	}
+}
+
+.year {
+	position: absolute;
+	left: 0;
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
+.block {
+	& .range {
+		font-size: 0.9em;
+	}
+
+	& .title {
+		font-weight: bold;
+		font-size: 1.1em;
+		margin: calc(0.5 * var(--padding-standard)) 0;
+	}
+
+	& .roles {
+		font-style: italic;
+	}
+
+	& .skills {
+		margin: var(--padding-standard) 0 0 0;
+	}
+}

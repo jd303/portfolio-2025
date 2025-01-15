@@ -1,11 +1,13 @@
+import BackButton from './BackButton';
 import './ProjectHighlights.css'
 
 function ProjectHighlights() {
 
 	return (
 		<>
-			<div className="page-content career-timeline">
-				Project Highlight works
+			<BackButton />
+			<div className="page-content project-highlights">
+				Project Highlights works
 			</div>
 		</>
 	)

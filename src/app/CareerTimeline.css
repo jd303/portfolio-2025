@@ -1,0 +1,7 @@
+.vertical-rule {
+	position: absolute;
+	left: calc(5 * var(--padding-standard));
+    width: 2px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);;
+}
