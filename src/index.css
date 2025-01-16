@@ -4,9 +4,13 @@
 	--zindex-content: 50;
 	--zindex-overlay: 100;
 	--border-radius-standard: 5px;
-	--colour-primary: rgb(25, 214, 190);
+	/*--colour-primary: rgb(25, 214, 190);*/
+	/*--colour-primary: rgb(25, 112, 101);*/
+	--colour-primary: rgb(25, 82, 75);
+	--colour-primary-bright: rgb(25, 214, 190);
 	--colour-secondary: rgb(125, 91, 166);
 	--colour-dark: rgb(30, 30, 30);
+	--colour-light: rgb(220, 220, 220);
 	--background-colour: #222;
 }
 
@@ -15,7 +19,7 @@ html, body {
 	height: 100%;
 	padding: 0;
 	margin: 0;
-	color: var(--colour-dark);
+	color: var(--colour-light);
 	font-family: Montserrat, sans-serif;
 	font-weight: 200;
 	background-color: var(--colour-primary);

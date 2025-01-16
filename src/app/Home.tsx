@@ -8,7 +8,6 @@ function Home() {
 	const [selectedContent, setSelectedContent] = useState('react');
 
 	const setContent = (which: string) => {
-		console.log("CLICKY");
 		setSelectedContent(which);
 	}
 
@@ -25,9 +24,9 @@ function Home() {
 				</div>
 				<div>Or see...
 					<menu>
-						<Link to="/about">About</Link>
 						<Link to="/career-timeline">Career Timeline</Link>
 						<Link to="/project-hightlights">Project Highlights</Link>
+						<Link to="/about">About Me</Link>
 						<Link to="https://github.com/jd303?tab=repositories" target="_blank">Github</Link>
 					</menu>
 				</div>

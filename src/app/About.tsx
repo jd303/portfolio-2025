@@ -12,7 +12,7 @@ function About() {
 				<AboutThing>AI has ethical implications in creative work.</AboutThing>
 				<AboutThing>20 years experience in digital development.</AboutThing>
 				<AboutThing>I love DnD.</AboutThing>
-				<AboutThing>Making people laugh is next to godliness.</AboutThing>
+				<AboutThing>Making people laugh is a virtue.</AboutThing>
 			</div>
 		</>
 	)

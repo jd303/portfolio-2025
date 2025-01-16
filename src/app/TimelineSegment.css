@@ -9,7 +9,7 @@
 		top: 0;
 		width: calc(2 * var(--padding-standard));
 		height: 100%;
-		background-color: var(--colour-secondary);
+		background-color: var(--colour-primary-bright);
 	}
 
 	&:nth-child(2n) {

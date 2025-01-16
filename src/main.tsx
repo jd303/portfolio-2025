@@ -15,10 +15,10 @@ createRoot(document.getElementById('root')!).render(
 		<BrowserRouter>
 			<Routes>
 				<Route element={<Layout />}>
-				<Route path="/" element={<Home />} />
-				<Route path="/about" element={<About />} />
-				<Route path="/career-timeline" element={<CareerTimeline />} />
-				<Route path="/project-hightlights" element={<ProjectHighlights />} />
+					<Route path="/" element={<Home />} />
+					<Route path="/about" element={<About />} />
+					<Route path="/career-timeline" element={<CareerTimeline />} />
+					<Route path="/project-hightlights" element={<ProjectHighlights />} />
 				</Route>
 				<Route path="/snake-visualisation" element={<SnakeVisualisation />} />
 			</Routes>

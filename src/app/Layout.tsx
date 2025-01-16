@@ -3,10 +3,10 @@ import Canvas from './Canvas';
 import './Layout.css';
 
 function Layout() {
-
 	return (
 		<>
 			<Canvas />
+			<div className="noise-bg"></div>
 			<div className="layout">
 				<div className="content"><Outlet /></div>
 			</div>
