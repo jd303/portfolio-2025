@@ -1,5 +1,5 @@
-import AboutThing from './AboutThing';
-import BackButton from './BackButton';
+import AboutThing from './components/AboutThing';
+import BackButton from './components/BackButton';
 import './About.css';
 
 function About() {

@@ -1,0 +1,13 @@
+a.back-button {
+	position: relative;
+	top: 0;
+	left: 0;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: var(--colour-light);
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}

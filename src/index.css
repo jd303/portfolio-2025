@@ -1,5 +1,6 @@
 :root {
-	--padding-standard: 12px;
+	--padding-standard: 6px;
+	--padding-site: calc(3 * var(--padding-standard));
 	--zindex-base: 1;
 	--zindex-content: 50;
 	--zindex-overlay: 100;
@@ -12,6 +13,10 @@
 	--colour-dark: rgb(30, 30, 30);
 	--colour-light: rgb(220, 220, 220);
 	--background-colour: #222;
+
+	@media (min-width: 400px) {
+		--padding-standard: 12px;
+	}
 }
 
 html, body {

@@ -1,0 +1,66 @@
+.fanned-image {
+	height: 350px;
+	transition: all 0.5s cubic-bezier(.11,0,.21,1.32);
+
+	& img {
+		object-fit: contain;
+		width: 100%;
+		height: 100%;
+	}
+
+	&:nth-of-type(1) {
+		transition-delay: 0s;
+	}
+
+	&:nth-of-type(2) {
+		transition-delay: 0.05s;
+	}
+
+	&:nth-of-type(3) {
+		transition-delay: 0.1s;
+	}
+
+	&:nth-of-type(4) {
+		transition-delay: 0.15s;
+	}
+}
+
+.fanned-image-row:not(:hover) {
+	& .fanned-image {
+		&:nth-of-type(1) {
+			transform: rotate(-12deg) translateY(65px) translateX(20px);
+		}
+
+		&:nth-of-type(2) {
+			transform: rotate(-6deg) translateX(10px);
+		}
+
+		&:nth-of-type(3) {
+			transform: rotate(6deg) translateX(-10px);
+		}
+
+		&:nth-of-type(4) {
+			transform: rotate(12deg) translateY(65px) translateX(-20px);
+		}
+	}
+}
+
+.fanned-image-row:hover {
+	& .fanned-image {
+		&:nth-of-type(1) {
+			transform: rotate(-10deg) translateY(65px) translateX(20px);;
+		}
+
+		&:nth-of-type(2) {
+			transform: rotate(-4deg) translateX(10px);
+		}
+
+		&:nth-of-type(3) {
+			transform: rotate(4deg) translateX(-10px);
+		}
+
+		&:nth-of-type(4) {
+			transform: rotate(10deg) translateY(65px) translateX(-20px);
+		}
+	}
+}

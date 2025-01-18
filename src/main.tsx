@@ -6,6 +6,7 @@ import Layout from './app/Layout';
 import Home from './app/Home';
 import CareerTimeline from './app/CareerTimeline';
 import SnakeVisualisation from './app/SnakeVisualisation';
+import Exerciser from './app/Exerciser';
 import ProjectHighlights from './app/ProjectHighlights';
 import About from './app/About';
 import './index.css';
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')!).render(
 					<Route path="/project-hightlights" element={<ProjectHighlights />} />
 				</Route>
 				<Route path="/snake-visualisation" element={<SnakeVisualisation />} />
+				<Route path="/exerciser-visualisation" element={<Exerciser />} />
 			</Routes>
 		</BrowserRouter>
 	</StrictMode>,
