@@ -1,0 +1,20 @@
+.bubble-thing {
+	position: relative;
+	color: var(--colour-dark);
+	font-weight: 400;
+	padding: calc(1.25 * var(--padding-standard));
+	border-radius: var(--padding-standard);
+	background-color: #ddd;
+	transition: all 0.15s;
+	transition-delay: 0.45s;
+
+	&:hover {
+		border-radius: calc(2 * var(--padding-standard));
+		transition-delay: 0s;
+	}
+
+	&[attr-color="primary"] {
+		color: var(--colour-light);
+		background-color: var(--colour-primary);
+	}
+}

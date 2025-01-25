@@ -1,0 +1,24 @@
+:root {
+	--flex-direction-section-header: row;
+	--top-section-header: calc(4 * var(--padding-standard));
+	--left-section-header: 50%;
+	--transfrom-section-header: translateY(-50%) translateX(-50%);
+
+	@media (min-width: 900px) {
+		--flex-direction-section-header: column;
+		--top-section-header: 50%;
+		--left-section-header: var(--padding-standard);
+		--transfrom-section-header: translateY(-50%);
+	}
+}
+
+.section-header {
+	display: flex;
+	flex-direction: var(--flex-direction-section-header);
+	align-items: center;
+	position: absolute;
+	top: var(--top-section-header);
+	left: var(--left-section-header);
+	transform: var(--transfrom-section-header);
+	font-size: 2em;
+}

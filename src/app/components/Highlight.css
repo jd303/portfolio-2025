@@ -7,4 +7,13 @@
 	&:hover, &.selected {
 		text-decoration: underline;
 	}
+
+	& a {
+		color: var(--colour-light);
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }

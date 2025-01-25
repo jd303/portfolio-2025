@@ -2,14 +2,13 @@ import './Highlight.css';
 
 type Props = {
 	children: string;
-	selected: boolean;
-	onClick: () => void;
+	id: string;
+	scrollTo: (ref: string) => void,
   }
 
-function Highlight({children, selected, onClick}: Props) {
-
+function Highlight({children, id, scrollTo}: Props) {
 	return (
-		<span className={"highlight"+(selected && ' selected' || '')} onClick={onClick}>{children}</span>
+		<span className="highlight" onClick={() => scrollTo(id)}>{children}</span>
 	)
 }
 

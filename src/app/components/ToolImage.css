@@ -1,0 +1,37 @@
+.tool-image {
+	position: relative;
+
+	&:hover .popup {
+		opacity: 1;
+	}
+}
+
+.popup {
+	position: absolute;
+	z-index: 100;
+	top: 100%;
+	left: 50%;
+	min-width: 50%;
+	min-height: 20px;
+	text-align: center;
+	padding: var(--padding-standard);
+	background-color: #fff;
+	border-radius: var(--padding-standard);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+	transform: translateX(-50%);
+	transform-origin: 50% 0;
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.5s;
+
+	&:before {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		left: 50%;
+		top: calc(-1 * var(--padding-standard) + 2px);
+		border: solid 15px transparent;
+		border-bottom-color: #fff;
+		transform: translate(-50%, -50%);
+	}
+}
