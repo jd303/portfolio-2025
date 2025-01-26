@@ -1,3 +1,35 @@
+:root {
+	--scroll-down-display: block;
+	--section-width: calc(100% + calc(8 * var(--padding-standard)));
+	--section-padding: calc(12 * var(--padding-standard)) calc(4 * var(--padding-standard));
+	--section-margin: calc(-4 * var(--padding-standard));
+	--vitae-grid-width: 100%;
+	--vitae-grid-columns: 1fr;
+	--vitae-grid-row: auto;
+	--vitae-grid-1-column: 1; --vitae-grid-1-row: 1;
+	--vitae-grid-2-column: 1; --vitae-grid-2-row: 3;
+	--vitae-grid-3-column: 1; --vitae-grid-3-row: 2;
+	--vitae-grid-4-column: 1; --vitae-grid-4-row: 5;
+	--vitae-grid-5-column: 1; --vitae-grid-5-row: 4;
+	--vitae-grid-6-column: 1; --vitae-grid-6-row: 6;
+
+	@media (min-width: 1001px) {
+		--scroll-down-display: none;
+		--section-width: calc(100% + calc(6 * var(--padding-standard)));
+		--section-padding: calc(16 * var(--padding-standard)) calc(3 * var(--padding-standard));
+		--section-margin: calc(-3 * var(--padding-standard));
+		--vitae-grid-width: 90%;
+		--vitae-grid-columns: 1fr 1fr 1fr;
+		--vitae-grid-rows: auto;
+		--vitae-grid-1-column: 1; --vitae-grid-1-row: 1;
+		--vitae-grid-2-column: 2; --vitae-grid-2-row: 1/4;
+		--vitae-grid-3-column: 3; --vitae-grid-3-row: 1/3;
+		--vitae-grid-4-column: 1; --vitae-grid-4-row: 2/6;
+		--vitae-grid-5-column: 2; --vitae-grid-5-row: 4/6;
+		--vitae-grid-6-column: 3; --vitae-grid-6-row: 3/6;
+	}
+}
+
 menu {
 	display: flex;
 	flex-direction: column;
@@ -30,37 +62,25 @@ menu {
 section {
 	position: relative;
 	display: flex;
-	width: calc(100% + calc(6 * var(--padding-standard)));
-	margin-left: calc(-3 * var(--padding-standard));
-	padding: calc(16 * var(--padding-standard)) calc(3 * var(--padding-standard));
+	width: var(--section-width);
+	margin-left: var(--section-margin);
+	padding: var(--section-padding);
 	box-sizing: border-box;
 
 	&:nth-child(2n) {
 		background-color: rgba(0, 0, 0, 0.2);
 	}
 
-	&:nth-child(2n):not(.home):before {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: block;
-		width: 100%;
-		height: 100%;
-		background-image: url('../assets/bg.noise.gif');
-		mix-blend-mode: hard-light;
-		opacity: 0.12;
-		pointer-events: none;
-	}
-
 	&.home {
-		max-width: 1000px;
+		width: 100%;
+		max-width: var(--max-width-site);
 		gap: calc(6 * var(--padding-standard));
 		align-items: flex-start;
 		justify-content: space-between;
 		flex-direction: column;
+		margin-left: calc(-2 * var(--padding-standard));
 
-		@media (min-width: 800px) {
+		@media (min-width: 1001px) {
 			align-items: flex-end;
 			flex-direction: row;
 		}
@@ -79,11 +99,10 @@ section {
 
 		& .vitae-grid {
 			display: grid;
-			grid-template-columns: 1fr 1fr 1fr;
-			grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+			grid-template-columns: var(--vitae-grid-columns);
+			grid-template-rows: var(--vitae-grid-rows);
 			gap: calc(2 * var(--padding-standard));
-			width: 90%;
-			max-width: var(--max-width-site);
+			max-width: var(--vitae-grid-width);
 
 			& .vitae-cell:not(:first-of-type) {
 				color: var(--colour-dark);
@@ -93,23 +112,23 @@ section {
 			}
 
 			& .vitae-cell-1 {
-				grid-column: 1;
-				grid-row: 1;
+				grid-column: var(--vitae-grid-1-column);
+				grid-row: var(--vitae-grid-1-row);
 			}
 
 			& .vitae-cell-2 {
-				grid-column: 2;
-				grid-row: 1/4;
+				grid-column: var(--vitae-grid-2-column);
+				grid-row: var(--vitae-grid-2-row);
 			}
 
 			& .vitae-cell-3 {
-				grid-column: 3;
-				grid-row: 1/3;
+				grid-column: var(--vitae-grid-3-column);
+				grid-row: var(--vitae-grid-3-row);
 			}
 
 			& .vitae-cell-4 {
-				grid-column: 1;
-				grid-row: 2/6;
+				grid-column: var(--vitae-grid-4-column);
+				grid-row: var(--vitae-grid-4-row);
 
 				display: flex;
 				flex-direction: column;
@@ -117,18 +136,19 @@ section {
 			}
 
 			& .vitae-cell-5 {
-				grid-column: 2;
-				grid-row: 4/6;
+				grid-column: var(--vitae-grid-5-column);
+				grid-row: var(--vitae-grid-5-row);
 			}
 
 			& .vitae-cell-6 {
-				grid-column: 3;
-				grid-row: 3/6;
+				grid-column: var(--vitae-grid-6-column);
+				grid-row: var(--vitae-grid-6-row);
 			}
 
 			& .vitae-grid-title {
 				font-size: 1.1em;
 				font-weight: 500;
+				min-height: 30px;
 				margin-bottom: calc(var(--padding-standard) / 2);
 			}
 
@@ -204,23 +224,29 @@ section {
 		}
 	}
 
-	&.section-apps {
-		gap: calc(12 * var(--padding-standard));
-		flex-direction: column;
-	}
+	&.section-apps {}
 
 	& .menu {
 		text-align: left;
 
-		@media (min-width: 800px) {
+		@media (min-width: 1001px) {
 			text-align: right;
+		}
+
+		& .scroll-down-indicator {
+			display: var(--scroll-down-display);
+			margin-top: calc(6 * var(--padding-standard));
+			font-size: 2em;
 		}
 	}
 
 	&.section-web {
 		display: flex;
 		gap: var(--padding-standard);
-		padding: 0;
+
+		@media (min-width: 1001px) {
+			padding: calc(8 * var(--padding-standard)) calc(3 * var(--padding-standard));
+		}
 	}
 
 	&.section-visualisations {
@@ -228,17 +254,35 @@ section {
 		align-items: center;
 		gap: calc(2 * var(--padding-standard));
 
+		& .visualisations-title {
+			font-size: 2.2em;
+			font-weight: 400;
+			max-width: 500px;
+			text-align: center;
+		}
+			
+		p {
+			font-size: 1.8em;
+			max-width: 500px;
+			text-align: center;
+		}
+
 		& .snake-visualisation,
-		& .exerciser-visualisation {
+		& .exerciser-visualisation,
+		& .triangular-frame-visualisation {
 			width: 100%;
-			max-width: var(--max-width-site);
+			max-width: 100%;
 			border-radius: var(--padding-standard);
+
+			@media (min-width: 1001px) {
+				max-width: min(90%, var(--max-width-site));
+			}
 		}
 
 		& .snake-visualisation {
 			aspect-ratio: 4/3;
 
-			@media (min-width: 900px) {
+			@media (min-width: 1001px) {
 				aspect-ratio: 4/2;
 			}
 		}
@@ -247,15 +291,22 @@ section {
 			aspect-ratio: 4/3;
 		}
 
-		@media (min-width: 900px) {
-			padding-left: 100px;
+		& .triangular-frame-visualisation {
+			aspect-ratio: 4/3;
 		}
 	}
 
 	&.section-ai {
 		flex-direction: column;
-		gap: calc(2 * var(--padding-standard));
+		gap: calc(7 * var(--padding-standard));
 		align-items: center;
+
+		@media (min-width: 1001px) {
+			& .informative-video {
+				max-width: min(90%, var(--max-width-site));
+				margin: auto;
+			}
+		}
 	}
 
 	&.section-fin {

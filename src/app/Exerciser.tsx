@@ -4,7 +4,7 @@ function Exerciser() {
 
 	return (
 		<div className="visualisation">
-			<iframe src="public/exerciser/index.html" />
+			<iframe src="exerciser/index.html" />
 		</div>
 	)
 }

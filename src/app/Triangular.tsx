@@ -3,7 +3,7 @@ import './Triangular.css';
 function Triangular() {
 	return (
 		<div className="visualisation">
-			<iframe src="public/triangular/index.html" />
+			<iframe src="triangular/index.html" />
 		</div>
 	)
 }

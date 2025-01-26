@@ -1,10 +1,10 @@
 :root {
 	--flex-direction-section-header: row;
-	--top-section-header: calc(4 * var(--padding-standard));
+	--top-section-header: calc(5 * var(--padding-standard));
 	--left-section-header: 50%;
 	--transfrom-section-header: translateY(-50%) translateX(-50%);
 
-	@media (min-width: 900px) {
+	@media (min-width: 1001px) {
 		--flex-direction-section-header: column;
 		--top-section-header: 50%;
 		--left-section-header: var(--padding-standard);

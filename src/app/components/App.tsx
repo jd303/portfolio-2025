@@ -16,10 +16,19 @@ function App({ type, title, proposition, roles, tech, images }: props) {
 	const [galleryMode, setGalleryMode] = useState(false);
 	const toggleGalleryMode = () => setGalleryMode(!galleryMode);
 
+	const [showImage, setShowImage] = useState(1);
+	const toggleShowImage = () => setShowImage(showImage == 4 && 1 || showImage + 1);
+
+	const toggleImages = () => {
+		const documentWidth = window.innerWidth;
+		if (documentWidth < 1001) toggleShowImage();
+		else toggleGalleryMode();
+	}
+
 	return (
 		<>
-			<div className={"app-row " + type + (galleryMode ? ' gallery-mode' : '')}>
-				<div className="app-row-images-wrapper">
+			<div className={"app-row " + type + (galleryMode ? ' gallery-mode' : '') + (' show-' + showImage)}>
+				<div className="app-row-images-wrapper" onClick={toggleImages}>
 					{images.map((src: string, index: number) => (
 						<img src={src} alt="" key={"img-" + index} />
 					))}

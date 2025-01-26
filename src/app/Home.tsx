@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import { motion } from 'framer-motion';
-//import Highlight from './components/Highlight';
+import Apps from './components/Apps';
 import App from './components/App';
 import SectionHeader from './components/SectionHeader';
 import AppTitle from './components/AppTitle';
@@ -9,7 +9,6 @@ import Bubble from './components/Bubble';
 import ToolImage from './components/ToolImage';
 import InformativeVideo from './components/InformativeVideo';
 import WebGallery from './components/WebGallery';
-//import WebGalleryImage from './components/WebGalleryImage';
 import './Home.css';
 
 import icoLinkedIn from '../assets/ico.linkedin.svg';
@@ -34,6 +33,9 @@ import pp_1 from '../assets/flutter/pp_1.webp';
 import pp_2 from '../assets/flutter/pp_2.webp';
 import pp_3 from '../assets/flutter/pp_3.webp';
 import pp_4 from '../assets/flutter/pp_4.webp';
+import gr_1 from '../assets/flutter/gr_1.webp';
+import gr_2 from '../assets/flutter/gr_2.webp';
+import gr_3 from '../assets/flutter/gr_3.webp';
 import monarchLLM from '../assets/ai/MonarchLLM.mp4';
 import HILLM from '../assets/ai/humaninsights.mp4';
 
@@ -53,11 +55,13 @@ import lgCapacitor from '../assets/logos/lg.capacitor.svg';
 import lgCordova from '../assets/logos/lg.cordova.webp';
 import lgBitbucket from '../assets/logos/lg.bitbucket.svg';
 import lgGithub from '../assets/logos/lg.github.svg';
+import lgShopify from '../assets/logos/lg.shopify.svg';
+import lgDrupal from '../assets/logos/lg.drupal.svg';
 
 function Home() {
 	const scrollTo = (id: string) => {
 		const element = document.querySelector(`#${id}`);
-		element?.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+		element?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 	}
 
 	return (
@@ -66,15 +70,9 @@ function Home() {
 				<div className="intro">
 					<div className="larger">Hello 👋</div>
 					<br />
-					I'm a Senior full-stack Digital Developer with a front-end and app focus.  I'm looking for my next great role.
+					I'm a Senior Full Stack Digital Developer with a front-end and app focus.  I'm looking for my next great role.
 					<br /><br />
 					<div>Please, get in touch.</div>
-					{/*<br /><br />
-					Recent work:
-					<Highlight scrollTo={scrollTo} id='section-web'>Web, React &amp; NextJs,</Highlight>
-					<Highlight scrollTo={scrollTo} id='section-apps'>Flutter & Cordova apps,</Highlight> process, strategy, leadership,
-					<Highlight scrollTo={scrollTo} id='section-ai'>AI,</Highlight> and
-					<Highlight scrollTo={scrollTo} id='section-visualisations'>Visualisations.</Highlight>*/}
 				</div>
 				<div className="menu">
 					<menu>
@@ -83,6 +81,7 @@ function Home() {
 						<Link to="/skills">Skills</Link>
 						<Link to="https://github.com/jd303?tab=repositories" target="_blank">Github</Link>
 					</menu>
+					<div className="scroll-down-indicator" onClick={() => scrollTo('section-vitae')}>⬇️</div>
 				</div>
 			</section>
 			<section className="page-content section-vitae" id="section-vitae">
@@ -113,6 +112,8 @@ function Home() {
 							<ToolImage src={lgAws} alt="AWS" title="AWS Admin" />
 							<ToolImage src={lgBitbucket} alt="Bitbucket" title="A home for code" />
 							<ToolImage src={lgGithub} alt="Github" title="A second home for code" />
+							<ToolImage src={lgShopify} alt="Shopify" title="Shopify eCommerce" />
+							<ToolImage src={lgDrupal} alt="Drupal" title="Drupal CMS" />
 						</div>
 					</div>
 					<div className="vitae-cell vitae-cell-3">
@@ -127,11 +128,13 @@ function Home() {
 						</div>
 					</div>
 					<div className="vitae-cell vitae-cell-4">
-						<div className="vitae-grid-title">Achievements</div>
-						<Bubble>Almost 20 years experience (so close!)</Bubble>
-						<Bubble>Career skills covering Design and UX, Backend, Frontend and App Dev</Bubble>
-						<Bubble>Career roles covering development, design, management and leadership</Bubble>
-						<Bubble>A fourth fantastic thing</Bubble>
+						<div className="vitae-tools-row">
+							<div className="vitae-grid-title">Achievements</div>
+						</div>
+						<Bubble>Almost 20 years development experience (nearly there!)</Bubble>
+						<Bubble>Frontend, Backend and app development, as well as Design and UX skills</Bubble>
+						<Bubble>Multiple roles covering development, design, management and leadership</Bubble>
+						<Bubble>13 years in my last company</Bubble>
 					</div>
 					<div className="vitae-cell vitae-cell-5">
 						<div className="vitae-tools">
@@ -145,12 +148,16 @@ function Home() {
 						</div>
 					</div>
 					<div className="vitae-cell vitae-cell-6">
-						<div className="vitae-grid-title">Values</div>
+						<div className="vitae-tools-row">
+							<div className="vitae-grid-title">Values</div>
+						</div>
 						<div className="vitae-bubbles">
 							<Bubble>Ethics and morality is important.</Bubble>
 							<Bubble>I love AI.</Bubble>
 							<Bubble>DnD is great.</Bubble>
 							<Bubble>Laughing is a virtue.</Bubble>
+							<Bubble>Leave the office having done a great job.</Bubble>
+							<Bubble>Great collaboration means great work.</Bubble>
 						</div>
 					</div>
 				</div>
@@ -165,48 +172,63 @@ function Home() {
 				<SectionHeader>
 					<span>A</span><span>P</span><span>P</span><span>S</span>
 				</SectionHeader>
-				<App
-					type="tablet"
-					title={<AppTitle>Standing Tall 2.0</AppTitle>}
-					proposition={<AppProposition>Preventing one of the leading causes of elderly mortality through regular balance exercises.</AppProposition>}
-					roles={["Frontend Developer", "Producer"]}
-					tech={["Flutter", "Bloc/Cubit", "Material Design", "Android Recommended Architecture", "Commercial"]}
-					images={[st_2_1, st_2_2, st_2_3, st_2_4]} />
-				<App
-					type="tablet"
-					title={<AppTitle>Standing Tall 1.0</AppTitle>}
-					proposition={<AppProposition>Preventing one of the leading causes of elderly mortality through regular balance exercises.</AppProposition>}
-					roles={["Discovery", "Producer", "Designer", "UX", "Branding", "Lead Frontend Developer"]}
-					tech={["Cordova", "Angular", "Custom Design", "UX", "Branding", "Medical Trial"]}
-					images={[st_1_1, st_1_2, st_1_3, st_1_4]} />
-				<App
-					type="mobile"
-					title={<AppTitle>CivStart</AppTitle>}
-					proposition={<AppProposition>CivStart helps young veterans understand and reposition their skills, recognise their strengths, and convey these in a meaningful manner to potential employers</AppProposition>}
-					roles={["Frontend Developer", "Producer"]}
-					tech={["Flutter", "Bloc/Cubit", "Material Design", "Rapid Development Collaboration"]}
-					images={[civstart_1, civstart_2, civstart_3, civstart_4]} />
-				<App
-					type="mobile"
-					title={<AppTitle>ReNeuWell</AppTitle>}
-					proposition={<AppProposition>Practices, activities and exercises to enforce mental wellbeing, including meditation, mindful colouring, positive thinking and empathy.</AppProposition>}
-					roles={["Frontend Developer", "QC"]}
-					tech={["Cordova", "Angular", "Firebase"]}
-					images={[ren_1, ren_2, ren_3, ren_4]} />
-				<App
-					type="mobile"
-					title={<AppTitle>Pat Pawtal</AppTitle>}
-					proposition={<AppProposition>Practices, activities and exercises to enforce mental wellbeing, including meditation, mindful colouring, positive thinking and empathy.</AppProposition>}
-					roles={["Lead Frontend Developer"]}
-					tech={["Flutter", "Bloc/Cubit"]}
-					images={[pp_1, pp_2, pp_3, pp_4]} />
+				<Apps>
+					<App
+						type="tablet"
+						title={<AppTitle>Standing Tall 2.0</AppTitle>}
+						proposition={<AppProposition>Preventing one of the leading causes of elderly mortality through regular balance exercises.</AppProposition>}
+						roles={["Frontend Developer", "Producer"]}
+						tech={["Flutter", "Bloc/Cubit", "Material Design", "Android Recommended Architecture", "Commercial"]}
+						images={[st_2_1, st_2_2, st_2_3, st_2_4]} />
+					<App
+						type="tablet"
+						title={<AppTitle>Standing Tall 1.0</AppTitle>}
+						proposition={<AppProposition>Preventing one of the leading causes of elderly mortality through regular balance exercises.</AppProposition>}
+						roles={["Discovery", "Producer", "Designer", "UX", "Branding", "Lead Frontend Developer"]}
+						tech={["Cordova", "Angular", "Custom Design", "UX", "Branding", "Medical Trial"]}
+						images={[st_1_1, st_1_2, st_1_3, st_1_4]} />
+					<App
+						type="mobile"
+						title={<AppTitle>CivStart</AppTitle>}
+						proposition={<AppProposition>CivStart helps young veterans understand and reposition their skills, recognise their strengths, and convey these in a meaningful manner to potential employers</AppProposition>}
+						roles={["Frontend Developer", "Producer"]}
+						tech={["Flutter", "Bloc/Cubit", "Material Design", "Rapid Development Collaboration"]}
+						images={[civstart_1, civstart_2, civstart_3, civstart_4]} />
+					<App
+						type="mobile"
+						title={<AppTitle>ReNeuWell</AppTitle>}
+						proposition={<AppProposition>Practices, activities and exercises to enforce mental wellbeing, including meditation, mindful colouring, positive thinking and empathy.</AppProposition>}
+						roles={["Frontend Developer", "QC"]}
+						tech={["Cordova", "Angular", "Firebase"]}
+						images={[ren_1, ren_2, ren_3, ren_4]} />
+					<App
+						type="mobile"
+						title={<AppTitle>Pat Pawtal</AppTitle>}
+						proposition={<AppProposition>Practices, activities and exercises to enforce mental wellbeing, including meditation, mindful colouring, positive thinking and empathy.</AppProposition>}
+						roles={["Lead Frontend Developer"]}
+						tech={["Flutter", "Bloc/Cubit"]}
+						images={[pp_1, pp_2, pp_3, pp_4]} />
+					<App
+						type="mobile"
+						title={<AppTitle>Gold Rush</AppTitle>}
+						proposition={<AppProposition>A location-based promotional game where users could find real gold in the world.</AppProposition>}
+						roles={["Lead Frontend Developer", "Branding", "Design", "UX"]}
+						tech={["Cordova", "Angular"]}
+						images={[gr_1, gr_2, gr_3]} />
+				</Apps>
 			</section>
 			<section className="page-content section-visualisations" id="section-visualisations">
 				<SectionHeader>
 					<span>V</span><span>I</span><span>S</span><span>U</span><span>A</span><span>L</span><span>I</span><span>S</span><span>A</span><span>T</span><span>I</span><span>O</span><span>N</span><span>S</span>
 				</SectionHeader>
+				<div className="visualisations-title">ThreeJS and Canvas visualisations + interactives.</div>
+				<p className="only-mobile">(Best used with mouse)</p>
+				<p>Clipped text and mouse-path graphic, for website header. &lt;canvas&gt;</p>
 				<iframe src="/snake-visualisation" className="snake-visualisation"></iframe>
-				<iframe src="/exerciser-visualisation" className="exerciser-visualisation"></iframe>
+				<p>Animated trainer with API to schedule hundreds of exercise animations.  ThreeJS.</p>
+				<iframe src="/exerciser" className="exerciser-visualisation"></iframe>
+				<p>An animated website background. ThreeJS.</p>
+				<iframe src="/triangular" className="triangular-frame-visualisation"></iframe>
 			</section>
 			<section className="page-content section-ai" id="section-ai">
 				<SectionHeader>

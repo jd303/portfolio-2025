@@ -1,6 +1,6 @@
 :root {
-	--max-width-site: 80%;
-	--padding-standard: 6px;
+	--max-width-site: 100%;
+	--padding-standard: 8px;
 	--padding-site: calc(3 * var(--padding-standard));
 	--zindex-base: 1;
 	--zindex-content: 50;
@@ -14,10 +14,14 @@
 	--colour-dark: rgb(30, 30, 30);
 	--colour-light: rgb(220, 220, 220);
 	--background-colour: #222;
+	--font-size-base: 0.9em;
+	--only-mobile-display: block;
 
-	@media (min-width: 400px) {
+	@media (min-width: 1001px) {
 		--max-width-site: 1200px;
 		--padding-standard: 12px;
+		--font-size-base: 1em;
+		--only-mobile-display: none;
 	}
 }
 
@@ -29,13 +33,61 @@ html, body {
 	color: var(--colour-light);
 	font-family: Montserrat, sans-serif;
 	font-weight: 200;
+	font-size: var(--font-size-base);
 	background-color: var(--colour-primary);
 }
 
 #root {
 	height: 100%;
+	overflow-x: hidden;
 }
 
-.page-content{
+.page-content:not(:first-of-type) {
 	margin-top: calc(3 * var(--padding-standard));
+}
+
+.only-mobile {
+	display: var(--only-mobile-display);
+}
+
+.carousel-controls {
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	top: calc(3 * var(--padding-standard));
+	left: 0;
+	width: 100%;
+	padding: 0 calc(2 * var(--padding-standard));
+	box-sizing: border-box;
+
+	@media (min-width: 1001px) {
+		display: none;
+	}
+
+	& button {
+		width: 32px;
+		height: 32px;
+		outline: none;
+		border: none;
+		border-radius: 50%;
+		padding: 10px;
+		background-color: rgba(0, 0, 0, 0.2);
+
+		&:before {
+			content: "";
+			width: 10px;
+			height: 10px;
+			border: solid rgba(255, 255, 255, 0.2);
+			border-width: 0 3px 3px 0;
+			display: inline-block;
+		}
+		
+		&.right:before {
+			transform: translateX(-3px) rotate(-45deg);
+		}
+		
+		&.left:before {
+			transform: translateX(3px) rotate(135deg);
+		}
+	}
 }

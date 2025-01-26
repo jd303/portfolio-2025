@@ -1,6 +1,6 @@
 .career-timeline {
 	position: relative;
-	margin-bottom: calc(6 * var(--padding-standard));
+	margin: calc(6 * var(--padding-standard)) 0;
 }
 
 .vertical-rule {

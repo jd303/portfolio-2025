@@ -1,25 +1,52 @@
+:root {
+	--web-gallery-width: 100%;
+	--web-galllery-items-display: flex;
+	--web-galllery-items-position: relative;
+	--web-galllery-items-flex-direction: column;
+	--web-gallery-thumbs-display: none;
+	--web-gallery-item-max-height: 520px;
+	--web-gallery-vitae-max-width: 80%;
+
+	@media (min-width: 1001px) {
+		--web-gallery-width: 90%;
+		--web-galllery-items-display: none;
+		--web-galllery-items-position: absolute;
+		--web-galllery-items-flex-direction: row;
+		--web-gallery-thumbs-display: flex;
+		--web-gallery-item-max-height: 800px;
+		--web-gallery-vitae-max-width: 320px;
+	}
+}
+
 .web-gallery-container {
 	display: flex;
 	flex-direction: column;
 	gap: calc(2 * var(--padding-standard));
 	width: 100%;
-    max-width: var(--max-width-site);
+    max-width: 1400px;
 
 	& .web-gallery {
+		display: flex;
+		gap: calc(2 * var(--padding-standard));
 		position: relative;
-		width: 100%;
+		width: var(--web-gallery-width);
 		height: 600px;
-		overflow: hidden;
+		margin: auto;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
 
 		& .web-gallery-item {
-			display: none;
-			position: absolute;
-			gap: calc(2 * var(--padding-standard));
+			display: var(--web-galllery-items-display);
+			flex-direction: var(--web-galllery-items-flex-direction);
+			position: var(--web-galllery-items-position);
+			gap: calc(3 * var(--padding-standard));
 			width: 100%;
+			min-width: 100%;
 			height: 100%;
-			max-height: 800px;
+			max-height: var(--web-gallery-item-max-height);
 			object-fit: cover;
 			object-position: 50% 0%;
+			scroll-snap-align: start;
 
 			&.on {
 				display: flex;
@@ -45,6 +72,7 @@
 				flex-direction: column;
 				gap: calc(2 * var(--padding-standard));
 				min-width: 265px;
+				max-width: var(--web-gallery-vitae-max-width);
 
 				& .web-gallery-title {
 					font-size: 2em;
@@ -54,14 +82,22 @@
 				& .web-gallery-desc {
 					font-size: 1.2em;
 				}
+
+				& .web-gallery-tech-container {
+					display: flex;
+					flex-wrap: wrap;
+					gap: var(--padding-standard);
+				}
 			}
 		}
 	}
 
 	& .web-gallery-thumbs {
-		display: flex;
+		display: var(--web-gallery-thumbs-display);
 		gap: var(--padding-standard);
+		width: var(--web-gallery-width);
 		height: 100px;
+		margin: auto;
 
 		& .web-gallery-thumb {
 			border: none;
@@ -94,7 +130,7 @@
 		object-position: 50% 0%;
 	}
 
-	90% {
+	95% {
 		object-position: 50% 100%;
 	}
 

@@ -15,7 +15,7 @@ function InformativeVideo({ children, title, desc }: Props) {
 			</div>
 			<div className="more">
 				<div className="more-video-title">{title}</div>
-				{desc}
+				<div className="more-video-desc">{desc}</div>
 			</div>
 		</div>
 	)

@@ -1,0 +1,21 @@
+:root {
+	--apps-wrapper-direction: row;
+	--apps-wrapper-overflow: auto;
+
+	@media (min-width: 1001px) {
+		--apps-wrapper-direction: column;
+		--apps-wrapper-overflow: visible;
+	}
+}
+
+.apps-wrapper {
+	display: flex;
+	flex-direction: var(--apps-wrapper-direction);
+	gap: calc(12 * var(--padding-standard));
+	overflow-x: var(--apps-wrapper-overflow);
+	scroll-snap-type: x mandatory;
+	
+	& .app-row {
+		scroll-snap-align: start;
+	}
+}
