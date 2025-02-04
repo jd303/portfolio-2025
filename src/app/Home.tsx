@@ -36,6 +36,10 @@ import pp_4 from '../assets/flutter/pp_4.webp';
 import gr_1 from '../assets/flutter/gr_1.webp';
 import gr_2 from '../assets/flutter/gr_2.webp';
 import gr_3 from '../assets/flutter/gr_3.webp';
+import int_1 from '../assets/flutter/int_1.webp';
+import int_2 from '../assets/flutter/int_2.webp';
+import int_3 from '../assets/flutter/int_3.webp';
+import int_4 from '../assets/flutter/int_4.webp';
 import monarchLLM from '../assets/ai/MonarchLLM.mp4';
 import HILLM from '../assets/ai/humaninsights.mp4';
 
@@ -70,7 +74,7 @@ function Home() {
 				<div className="intro">
 					<div className="larger">Hello 👋</div>
 					<br />
-					I'm a Senior Full Stack Digital Developer with a front-end and app focus.  I'm looking for my next great role.
+					I'm a Senior Software Engineer with a front-end web and app focus.  I'm looking for my next great role.
 					<br /><br />
 					<div>Please, get in touch.</div>
 				</div>
@@ -152,12 +156,12 @@ function Home() {
 							<div className="vitae-grid-title">Values</div>
 						</div>
 						<div className="vitae-bubbles">
+							<Bubble>Leave the office proud of your work.</Bubble>
 							<Bubble>Ethics and morality is important.</Bubble>
 							<Bubble>I love AI.</Bubble>
 							<Bubble>DnD is great.</Bubble>
-							<Bubble>Laughing is a virtue.</Bubble>
-							<Bubble>Leave the office having done a great job.</Bubble>
 							<Bubble>Great collaboration means great work.</Bubble>
+							<Bubble>Laughing is a virtue.</Bubble>
 						</div>
 					</div>
 				</div>
@@ -209,6 +213,13 @@ function Home() {
 						tech={["Flutter", "Bloc/Cubit"]}
 						images={[pp_1, pp_2, pp_3, pp_4]} />
 					<App
+						type="tablet"
+						title={<AppTitle>Intuition 2.0</AppTitle>}
+						proposition={<AppProposition>A data and state heavy character creator and rules repository for a homebrew roleplaying system.</AppProposition>}
+						roles={["Lead Frontend Developer", "Branding", "Design", "UX"]}
+						tech={["React", "Typescript", "SASS"]}
+						images={[int_1, int_2, int_3, int_4]} />
+					<App
 						type="mobile"
 						title={<AppTitle>Gold Rush</AppTitle>}
 						proposition={<AppProposition>A location-based promotional game where users could find real gold in the world.</AppProposition>}
@@ -240,6 +251,15 @@ function Home() {
 				<InformativeVideo title="Sydney Ethics Centre" desc="A personalised discovery of self, this LLM Agent analyses Ethics materials and compares them to the user's selections, determining the options on future pages.">
 					<video src={HILLM} loop={true} autoPlay={true} muted></video>
 				</InformativeVideo>
+			</section>
+			<section className="section-references">
+				<div className="references-title">Some of the talented coworkers who would be happy to talk me up.  Reach out for a chat.</div>
+				<Link className="contact-method" to="https://www.linkedin.com/in/katjaderobinson/" target="_blank">
+					<img src={icoLinkedIn} alt="LinkedIn" /><p>Kat Robinson</p>
+				</Link>
+				<Link className="contact-method" to="https://www.linkedin.com/in/george-tulloch" target="_blank">
+					<img src={icoLinkedIn} alt="LinkedIn" /><p>George Tulloch</p>
+				</Link>
 			</section>
 			<section className="section-fin">
 				<div onClick={() => scrollTo('section-home')}>BACK TO TOP</div>

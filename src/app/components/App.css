@@ -3,6 +3,7 @@
 	--app-row-images-width: auto;
 	--app-row-images-height: 400px;
 	--app-row-toggle-display: none;
+	--app-row-toggle-display-mobile: block;
 	--app-row-images-justify: center;
 
 	--app-image-rotate-1: rotate(0deg);
@@ -19,6 +20,7 @@
 		--app-row-images-width: 400px;
 		--app-row-images-height: 500px;
 		--app-row-toggle-display: block;
+		--app-row-toggle-display-mobile: none;
 		--app-row-images-justify: flex-end;
 
 		--app-image-rotate-1: rotate(0deg);
@@ -223,12 +225,9 @@
 	}
 }
 
-.app-row-toggle-button {
-	display: var(--app-row-toggle-display);
+.app-row-toggle-button, .app-row-toggle-mobile {
 	position: absolute;
 	z-index: 20;
-	bottom: -70px;
-	right: 0;
 	height: 50px;
 	width: 120px;
 	font-size: 2em;
@@ -236,7 +235,6 @@
 	color: var(--colour-light);
 	margin: calc(-8 * var(--padding-standard)) auto 0 auto;
 	padding: var(--padding-standard);
-	background-color: rgba(255, 255, 255, 0.03);
 	border-radius: var(--padding-standard);
 	border: none;
 	outline: none;
@@ -246,4 +244,20 @@
 	&:hover {
 		background-color: rgba(255, 255, 255, 0.05);
 	}
+}
+
+.app-row-toggle-button {
+	display: var(--app-row-toggle-display);
+	bottom: -70px;
+	right: 0;
+	background-color: rgba(255, 255, 255, 0.03);
+}
+
+.app-row-toggle-mobile {
+	display: var(--app-row-toggle-display-mobile);
+	z-index: 100;
+	bottom: -20px;
+	right: 50%;
+	background-color: rgba(255, 255, 255, 0.2);
+	transform: translateX(50%);
 }

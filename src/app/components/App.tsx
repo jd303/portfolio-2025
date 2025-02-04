@@ -33,6 +33,7 @@ function App({ type, title, proposition, roles, tech, images }: props) {
 						<img src={src} alt="" key={"img-" + index} />
 					))}
 					<button className="app-row-toggle-button" onClick={toggleGalleryMode}>➡️</button>
+					<button className="app-row-toggle-mobile" onClick={toggleImages}>➡️</button>
 				</div>
 				<div className="app-row-vitae">
 					<div className="app-row-vitae-info">

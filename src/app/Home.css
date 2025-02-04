@@ -309,6 +309,37 @@ section {
 		}
 	}
 
+	&.section-references {
+		flex-direction: column;
+		gap: calc(4 * var(--padding-standard));
+		align-items: center;
+		text-align: center;
+		width: 100%;
+		max-width: 500px;
+		margin: auto;
+
+		& .references-title {
+			font-size: 2em;
+		}
+
+		& a {
+			display: block;
+			width: 100%;
+			font-size: 1.5em;
+			color: var(--colour-light);
+			text-decoration: none;
+			transition: all 0.2s;
+
+			& p {
+				margin: 0;
+			}
+
+			&:hover {
+				font-weight: 500;
+			}
+		}
+	}
+
 	&.section-fin {
 		font-size: 1.4em;
 
