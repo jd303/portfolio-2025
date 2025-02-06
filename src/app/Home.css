@@ -18,7 +18,7 @@
 		--section-width: calc(100% + calc(6 * var(--padding-standard)));
 		--section-padding: calc(16 * var(--padding-standard)) calc(3 * var(--padding-standard));
 		--section-margin: calc(-3 * var(--padding-standard));
-		--vitae-grid-width: 90%;
+		--vitae-grid-width: 1400px;
 		--vitae-grid-columns: 1fr 1fr 1fr;
 		--vitae-grid-rows: auto;
 		--vitae-grid-1-column: 1; --vitae-grid-1-row: 1;
@@ -186,6 +186,12 @@ section {
 						border-radius: var(--padding-standard);
 						background-color: #ccc;
 					}
+				}
+
+				& .vitae-tools-addendum {
+					display: flex;
+					align-items: flex-end;
+					font-size: 1.2em;
 				}
 			}
 		}

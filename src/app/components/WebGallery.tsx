@@ -32,16 +32,6 @@ function WebGallery() {
 		desc: "Coinciding with the release of Kubo and the Two String, this website rebuild helped Laika promote and display their amazing works of stop-motion.",
 		tech: ["Ruby CMS", "HTML/CSS", "Coffeescript"]
 	}, {
-		imgSrc: webRad,
-		title: "Rad.tv",
-		desc: "A rethink of Rad's NFT and TV offerings, these React components and page layout were built to align with the company's existing component library, to seamlessly embed over time.",
-		tech: ["React", "Typescript"]
-	}, {
-		imgSrc: webNeuro,
-		title: "Neurosensation",
-		desc: "A short-lived but exciting promotion of sexual confidence and wellbeing.",
-		tech: ["HTML/CSS", "Typescript"]
-	}, {
 		imgSrc: webPermira,
 		title: "Permira Investments",
 		desc: "This broad website's high data intensity needed a strong CMS, cache and state management, all with an on-brand design.",
@@ -56,6 +46,16 @@ function WebGallery() {
 		title: "Human insights",
 		desc: "By the Sydney Ethics Centre, Human insights is a demonstration of what could be - behaviour change and awareness of ethics, biases and lenses.",
 		tech: ["HTML/CSS", "Typescript", "ChatGPT"]
+	}, {
+		imgSrc: webRad,
+		title: "Rad.tv",
+		desc: "A rethink of Rad's NFT and TV offerings, these React components and page layout were built to align with the company's existing component library, to seamlessly embed over time.",
+		tech: ["React", "Typescript"]
+	}, {
+		imgSrc: webNeuro,
+		title: "Neurosensation",
+		desc: "A short-lived but exciting promotion of sexual confidence and wellbeing.",
+		tech: ["HTML/CSS", "Typescript"]
 	}, {
 		imgSrc: webYF,
 		title: "Young Futures",

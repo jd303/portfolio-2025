@@ -118,6 +118,7 @@ function Home() {
 							<ToolImage src={lgGithub} alt="Github" title="A second home for code" />
 							<ToolImage src={lgShopify} alt="Shopify" title="Shopify eCommerce" />
 							<ToolImage src={lgDrupal} alt="Drupal" title="Drupal CMS" />
+							<div className="vitae-tools-addendum">... and more.</div>
 						</div>
 					</div>
 					<div className="vitae-cell vitae-cell-3">
@@ -149,6 +150,7 @@ function Home() {
 							<ToolImage src={lgBloc} alt="Bloc" title="Bloc & Cubits" />
 							<ToolImage src={lgCapacitor} alt="Capacitor" title="Ionic Capacitor Apps" />
 							<ToolImage src={lgCordova} alt="Cordova" title="Cordova Apps" />
+							<div className="vitae-tools-addendum">... and more.</div>
 						</div>
 					</div>
 					<div className="vitae-cell vitae-cell-6">
@@ -157,9 +159,9 @@ function Home() {
 						</div>
 						<div className="vitae-bubbles">
 							<Bubble>Leave the office proud of your work.</Bubble>
-							<Bubble>Ethics and morality is important.</Bubble>
+							<Bubble>Ethics and moals are important.</Bubble>
 							<Bubble>I love AI.</Bubble>
-							<Bubble>DnD is great.</Bubble>
+							<Bubble>Storytelling is a powerful skill.</Bubble>
 							<Bubble>Great collaboration means great work.</Bubble>
 							<Bubble>Laughing is a virtue.</Bubble>
 						</div>
@@ -181,15 +183,15 @@ function Home() {
 						type="tablet"
 						title={<AppTitle>Standing Tall 2.0</AppTitle>}
 						proposition={<AppProposition>Preventing one of the leading causes of elderly mortality through regular balance exercises.</AppProposition>}
-						roles={["Frontend Developer", "Producer"]}
-						tech={["Flutter", "Bloc/Cubit", "Material Design", "Android Recommended Architecture", "Commercial"]}
+						roles={["Discovery", "Frontend Developer", "Producer"]}
+						tech={["Flutter", "Bloc/Cubit", "Material Design", "Android Recommended Architecture", "CI/CD", "In-App Purchases", "Drift DB", "Data Modelling", "REST API", "WebView", "Commercial"]}
 						images={[st_2_1, st_2_2, st_2_3, st_2_4]} />
 					<App
 						type="tablet"
 						title={<AppTitle>Standing Tall 1.0</AppTitle>}
 						proposition={<AppProposition>Preventing one of the leading causes of elderly mortality through regular balance exercises.</AppProposition>}
-						roles={["Discovery", "Producer", "Designer", "UX", "Branding", "Lead Frontend Developer"]}
-						tech={["Cordova", "Angular", "Custom Design", "UX", "Branding", "Medical Trial"]}
+						roles={["Discovery", "Lead Frontend Developer", "Producer", "Designer", "UX", "Branding"]}
+						tech={["Cordova", "Angular", "Data Modelling", "REST API", "Custom Design", "UX", "Branding", "Medical Trial"]}
 						images={[st_1_1, st_1_2, st_1_3, st_1_4]} />
 					<App
 						type="mobile"
@@ -217,7 +219,7 @@ function Home() {
 						title={<AppTitle>Intuition 2.0</AppTitle>}
 						proposition={<AppProposition>A data and state heavy character creator and rules repository for a homebrew roleplaying system.</AppProposition>}
 						roles={["Lead Frontend Developer", "Branding", "Design", "UX"]}
-						tech={["React", "Typescript", "SASS"]}
+						tech={["React", "Typescript", "Firebase", "SASS"]}
 						images={[int_1, int_2, int_3, int_4]} />
 					<App
 						type="mobile"
