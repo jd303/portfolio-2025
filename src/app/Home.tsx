@@ -159,11 +159,24 @@ function Home() {
 						</div>
 						<div className="vitae-bubbles">
 							<Bubble>Leave the office proud of your work.</Bubble>
-							<Bubble>Ethics and moals are important.</Bubble>
+							<Bubble>Ethics and morals are important.</Bubble>
 							<Bubble>I love AI.</Bubble>
 							<Bubble>Storytelling is a powerful skill.</Bubble>
 							<Bubble>Great collaboration means great work.</Bubble>
 							<Bubble>Laughing is a virtue.</Bubble>
+						</div>
+					</div>
+				</div>
+				<div className="vitae-references">
+					<div className="vitae-references-content">
+						<div className="references-title">Some of the talented coworkers who would be happy to talk me up.  Reach out for a chat.</div>
+						<div className="vitae-reference-links">
+							<Link className="contact-method" to="https://www.linkedin.com/in/katjaderobinson/" target="_blank">
+								<img src={icoLinkedIn} alt="LinkedIn" /><p>Kat Robinson</p>
+							</Link>
+							<Link className="contact-method" to="https://www.linkedin.com/in/george-tulloch" target="_blank">
+								<img src={icoLinkedIn} alt="LinkedIn" /><p>George Tulloch</p>
+							</Link>
 						</div>
 					</div>
 				</div>
@@ -253,15 +266,6 @@ function Home() {
 				<InformativeVideo title="Sydney Ethics Centre" desc="A personalised discovery of self, this LLM Agent analyses Ethics materials and compares them to the user's selections, determining the options on future pages.">
 					<video src={HILLM} loop={true} autoPlay={true} muted></video>
 				</InformativeVideo>
-			</section>
-			<section className="section-references">
-				<div className="references-title">Some of the talented coworkers who would be happy to talk me up.  Reach out for a chat.</div>
-				<Link className="contact-method" to="https://www.linkedin.com/in/katjaderobinson/" target="_blank">
-					<img src={icoLinkedIn} alt="LinkedIn" /><p>Kat Robinson</p>
-				</Link>
-				<Link className="contact-method" to="https://www.linkedin.com/in/george-tulloch" target="_blank">
-					<img src={icoLinkedIn} alt="LinkedIn" /><p>George Tulloch</p>
-				</Link>
 			</section>
 			<section className="section-fin">
 				<div onClick={() => scrollTo('section-home')}>BACK TO TOP</div>

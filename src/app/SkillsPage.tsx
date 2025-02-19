@@ -51,7 +51,7 @@ function SkillsPage() {
 					<Bubble color="primary">Figma</Bubble>
 					<Bubble color="primary">Photoshop</Bubble>
 					<Bubble color="primary">Design Matching</Bubble>
-					<Bubble color="primary">Written Sskills</Bubble>
+					<Bubble color="primary">Written Skills</Bubble>
 					<Bubble color="primary">Time Management</Bubble>
 					<Bubble color="primary">Ticket Management</Bubble>
 				</div>
