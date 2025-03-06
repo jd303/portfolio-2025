@@ -83,6 +83,7 @@ function Home() {
 						Or see...
 						<Link to="/career-timeline">Career Timeline</Link>
 						<Link to="/skills">Skills</Link>
+						<Link to="https://www.linkedin.com/in/joel-dawson-32876934/" target="_blank">LinkedIn</Link>
 						<Link to="https://github.com/jd303?tab=repositories" target="_blank">Github</Link>
 					</menu>
 					<div className="scroll-down-indicator" onClick={() => scrollTo('section-vitae')}>⬇️</div>
