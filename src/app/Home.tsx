@@ -12,7 +12,7 @@ import WebGallery from './components/WebGallery';
 import './Home.css';
 
 import icoLinkedIn from '../assets/ico.linkedin.svg';
-import icoGithub from '../assets/ico.github.svg';
+//import icoGithub from '../assets/ico.github.svg';
 import st_2_1 from '../assets/flutter/st_2_1.webp';
 import st_2_2 from '../assets/flutter/st_2_2.webp';
 import st_2_3 from '../assets/flutter/st_2_3.webp';
@@ -48,24 +48,41 @@ import lgCSS from '../assets/logos/lg.css.svg';
 import lgJavascript from '../assets/logos/lg.javascript.svg';
 import lgTypescript from '../assets/logos/lg.typescript.svg';
 import lgReact from '../assets/logos/lg.react.svg';
+import lgAngular from '../assets/logos/lg.angular.svg';
 import lgNext from '../assets/logos/lg.next.svg';
 import lgThree from '../assets/logos/lg.three.svg';
+import lgCanvas from '../assets/logos/lg.canvas.svg';
 import lgNode from '../assets/logos/lg.node.svg';
+import lgOpenAi from '../assets/logos/lg.openai.svg';
 import lgPhp from '../assets/logos/lg.php.svg';
 import lgAws from '../assets/logos/lg.aws.svg';
 import lgFlutter from '../assets/logos/lg.flutter.svg';
 import lgBloc from '../assets/logos/lg.bloc.webp';
 import lgCapacitor from '../assets/logos/lg.capacitor.svg';
 import lgCordova from '../assets/logos/lg.cordova.webp';
-import lgBitbucket from '../assets/logos/lg.bitbucket.svg';
-import lgGithub from '../assets/logos/lg.github.svg';
-import lgShopify from '../assets/logos/lg.shopify.svg';
-import lgDrupal from '../assets/logos/lg.drupal.svg';
+import lgRaboBank from '../assets/logos/lg.rabobank.svg';
+import lgPermira from '../assets/logos/lg.permira.svg';
+import lgKJP from '../assets/logos/lg.kjp.svg';
+import TimelineSegment from './components/TimelineSegment';
+import { useRef } from 'react';
 
 function Home() {
 	const scrollTo = (id: string) => {
 		const element = document.querySelector(`#${id}`);
 		element?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+	}
+
+	const timelineRef = useRef(null);
+
+	const timelineShift = (forward: boolean) => {
+		console.log('clicky');
+		if (!timelineRef || !timelineRef.current) return;
+		const ref = (timelineRef!.current! as HTMLElement);
+		const segment = ref.querySelector(".timeline-segment");
+		const segmentWidth = (segment as HTMLElement).offsetWidth;
+		if (forward) ref.scrollTo({ left: ref.scrollLeft + segmentWidth, behavior: "smooth" });
+		else ref.scrollTo({ left: ref.scrollLeft - segmentWidth, behavior: "smooth" });
+		console.log(timelineRef);
 	}
 
 	return (
@@ -91,80 +108,108 @@ function Home() {
 			</section>
 			<section className="page-content section-vitae" id="section-vitae">
 				<SectionHeader><span>V</span><span>I</span><span>T</span><span>A</span><span>E</span></SectionHeader>
+				<div className="vitae-heading">
+					<div className="vitae-subheading">
+						Getting Personal
+					</div>
+					<div className="vitae-main-heading">
+						A few highlights from my career.
+					</div>
+				</div>
 				<div className="vitae-grid">
-					<div className="vitae-cell vitae-cell-1">
-						<div className="vitae-subheading">
-							Getting Personal
-						</div>
-						<div className="vitae-heading">
-							A little bit about me.
-						</div>
+					<div className="vitae-tools-row vitae-cell-1">
+						<div className="vitae-grid-title">🏆 Development Achievements</div>
 					</div>
-					<div className="vitae-cell vitae-cell-2">
-						<div className="vitae-tools">
-							<div className="vitae-tools-row">
-								<div className="vitae-grid-title">Web</div>
-							</div>
-							<ToolImage src={lgHTML} alt="Web Basics" title="Years of websites" />
-							<ToolImage src={lgCSS} alt="CSS" title="Wrangling the ol' CSS" />
-							<ToolImage src={lgJavascript} alt="Javascript" title="Javascript: Vanilla and libraries" />
-							<ToolImage src={lgTypescript} alt="Typescript" title="Typescript: level up Javascript" />
-							<ToolImage src={lgReact} alt="React" title="React websites" />
-							<ToolImage src={lgNext} alt="NextJS" title="NextJS websites" />
-							<ToolImage src={lgThree} alt="ThreeJs" title="ThreeJS 3D and Visualisations" />
-							<ToolImage src={lgNode} alt="NodeJS" title="NodeJS servers" />
-							<ToolImage src={lgPhp} alt="PHP" title="PHP Backends" />
-							<ToolImage src={lgAws} alt="AWS" title="AWS Admin" />
-							<ToolImage src={lgBitbucket} alt="Bitbucket" title="A home for code" />
-							<ToolImage src={lgGithub} alt="Github" title="A second home for code" />
-							<ToolImage src={lgShopify} alt="Shopify" title="Shopify eCommerce" />
-							<ToolImage src={lgDrupal} alt="Drupal" title="Drupal CMS" />
-							<div className="vitae-tools-addendum">... and more.</div>
-						</div>
+					<div className="vitae-cell vitae-cell-2 flexing">
+						<Bubble color="faint"><div className="margined-row">🌐</div>Crafted and shipped over <strong>75 high-quality websites</strong> and <strong>7 cross-platform apps</strong> to happy clients, using modern technical solutions.</Bubble>
+						<Bubble color="faint"><div className="margined-row"><ToolImage src={lgKJP} alt="Kojima Productions" title="Kojima Productions" /></div>Scoped, planned and single-handedly built websites for famous clients such as <strong>Kojima Productions</strong> directly with lead client producers and brand experts.</Bubble>
+						<Bubble color="faint"><div className="margined-row"><ToolImage src={lgRaboBank} alt="Rabobank" title="Rabobank" /><ToolImage src={lgPermira} alt="Rabobank" title="Rabobank" /></div>Upgraded and supported the front end for high-risk web presences for finanical organisations <strong>Rabo Bank and Permira Investments</strong>.</Bubble>
+						<Bubble color="faint"><div className="margined-row">🛠️ 🔨 🔫</div>Developed a reputation at Miroma Project Factory as a <strong>set-and-forget developer</strong>.  With a scope or without, I delivered projects dependably in budget.</Bubble>
+						<Bubble color="faint"><div className="margined-row"><ToolImage src={lgNode} alt="NodeJS" title="NodeJS servers" /><ToolImage src={lgOpenAi} alt="OpenAI" title="LLMs and Chatbots" /></div>Crafted an in-house NodeJS framework for building AI Agents with the <strong>OpenAI agent API</strong>.</Bubble>
 					</div>
-					<div className="vitae-cell vitae-cell-3">
-						<div className="links">
-							<Link className="contact-method" to="https://www.linkedin.com/in/joel-dawson-32876934/" target="_blank">
-								<img src={icoLinkedIn} alt="LinkedIn" /><p>Find me here</p>
-							</Link>
-							<Link className="contact-method" to="https://github.com/jd303" target="_blank">
-								<img src={icoGithub} alt="LinkedIn" />
-								<p>A sample of<br /> personal code</p>
-							</Link>
-						</div>
+					<div className="vitae-tools-row vitae-cell-3">
+						<div className="vitae-grid-title">🏆 Production Achievements</div>
 					</div>
-					<div className="vitae-cell vitae-cell-4">
-						<div className="vitae-tools-row">
-							<div className="vitae-grid-title">Achievements</div>
-						</div>
-						<Bubble>Almost 20 years development experience (nearly there!)</Bubble>
-						<Bubble>Frontend, Backend and app development, as well as Design and UX skills</Bubble>
-						<Bubble>Multiple roles covering development, design, management and leadership</Bubble>
-						<Bubble>13 years in my last company</Bubble>
+					<div className="vitae-cell vitae-cell-4 flexing">
+						<Bubble color="faint"><div className="margined-row">💯</div>Drove <strong>discovery and technical direction</strong> for over 100 client projects, as well as setting internal technical direction and standards.</Bubble>
+						<Bubble color="faint"><div className="margined-row">📄</div>Lead <strong>technical direction and best practice</strong> for internal development, production and QC teams for over 5 years.</Bubble>
 					</div>
-					<div className="vitae-cell vitae-cell-5">
-						<div className="vitae-tools">
-							<div className="vitae-tools-row">
-								<div className="vitae-grid-title">Apps</div>
-							</div>
-							<ToolImage src={lgFlutter} alt="Flutter" title="Flutter Apps" />
-							<ToolImage src={lgBloc} alt="Bloc" title="Bloc & Cubits" />
-							<ToolImage src={lgCapacitor} alt="Capacitor" title="Ionic Capacitor Apps" />
-							<ToolImage src={lgCordova} alt="Cordova" title="Cordova Apps" />
-							<div className="vitae-tools-addendum">... and more.</div>
-						</div>
+					<div className="vitae-tools-row vitae-cell-5">
+						<div className="vitae-grid-title">💎 Values</div>
 					</div>
-					<div className="vitae-cell vitae-cell-6">
-						<div className="vitae-tools-row">
-							<div className="vitae-grid-title">Values</div>
-						</div>
+					<div className="vitae-cell vitae-cell-6 flexing">
 						<div className="vitae-bubbles">
-							<Bubble>Leave the office proud of your work.</Bubble>
-							<Bubble>Ethics and morals are important.</Bubble>
-							<Bubble>I love AI.</Bubble>
-							<Bubble>Storytelling is a powerful skill.</Bubble>
-							<Bubble>Great collaboration means great work.</Bubble>
-							<Bubble>Laughing is a virtue.</Bubble>
+							<Bubble color="faint">End the day proud of your work.</Bubble>
+							<Bubble color="faint">Equality is important.</Bubble>
+							<Bubble color="faint">AI is the future.</Bubble>
+							<Bubble color="faint">Stories are transformative.</Bubble>
+							<Bubble color="faint">Laughing is a virtue.</Bubble>
+							<Bubble color="faint">Great collaboration, great work.</Bubble>
+						</div>
+					</div>
+					<div className="vitae-tools-row vitae-cell-7">
+						<div className="vitae-grid-title">🛠️ Technical Skills</div>
+					</div>
+					<div className="vitae-cell vitae-cell-8">
+						<div className="vitae-tools flexing">
+							<Bubble color="faint">
+								<div className="vitae-tools-details">
+									<div className="vitae-tools-description">
+										<div>Web Development Core</div>
+										<div>Since 2006</div>
+									</div>
+									<ToolImage src={lgHTML} alt="Web Basics" title="HTML" />
+									<ToolImage src={lgCSS} alt="CSS" title="CSS" />
+									<ToolImage src={lgJavascript} alt="Javascript" title="Javascript" />
+									<ToolImage src={lgTypescript} alt="Typescript" title="Typescript" />
+								</div>
+							</Bubble>
+							<Bubble color="faint">
+								<div className="vitae-tools-details">
+									<div className="vitae-tools-description">
+										<div>Web Frameworks</div>
+										<div>Since 2016</div>
+									</div>
+									<ToolImage src={lgReact} alt="React" title="React" />
+									<ToolImage src={lgNext} alt="NextJS" title="NextJS" />
+									<ToolImage src={lgAngular} alt="Angular" title="Angular" />
+								</div>
+							</Bubble>
+							<Bubble color="faint">
+								<div className="vitae-tools-details">
+									<div className="vitae-tools-description">
+										<div>Backend</div>
+										<div>Since 2006</div>
+									</div>
+									<ToolImage src={lgNode} alt="NodeJS" title="NodeJS servers" />
+									<ToolImage src={lgPhp} alt="PHP" title="PHP Backends" />
+									<ToolImage src={lgAws} alt="AWS" title="AWS Admin" />
+								</div>
+							</Bubble>
+							<Bubble color="faint">
+								<div className="vitae-tools-details">
+									<div className="vitae-tools-description">
+										<div>Apps</div>
+										<div>Since 2015</div>
+									</div>
+									<ToolImage src={lgFlutter} alt="Flutter" title="Flutter" />
+									<ToolImage src={lgBloc} alt="Bloc" title="Bloc & Cubits" />
+									<ToolImage src={lgCapacitor} alt="Capacitor" title="Ionic Capacitor" />
+									<ToolImage src={lgCordova} alt="Cordova" title="Cordova" />
+								</div>
+							</Bubble>
+							<Bubble color="faint">
+								<div className="vitae-tools-details">
+									<div className="vitae-tools-description">
+										<div>Animation and Styling</div>
+										<div>Since 2016</div>
+									</div>
+									<ToolImage src={lgThree} alt="ThreeJs" title="ThreeJS 3D and Visualisations" />
+									<ToolImage src={lgCanvas} alt="Canvas" title="Canvas Visualisations" />
+									<ToolImage src={lgCSS} alt="CSS" title="Animations and transitions" />
+								</div>
+							</Bubble>
+							<div className="vitae-tools-addendum"><Link to="/skills">... see the full list</Link></div>
 						</div>
 					</div>
 				</div>
@@ -181,6 +226,23 @@ function Home() {
 						</div>
 					</div>
 				</div>
+			</section>
+			<section className="page-content section-timeline" id="section-timeline">
+				<SectionHeader><span>C</span><span>A</span><span>R</span><span>E</span><span>E</span><span>R</span><span>&nbsp;</span><span>T</span><span>I</span><span>M</span><span>E</span><span>L</span><span>I</span><span>N</span><span>E</span></SectionHeader>
+				<div className="timeline-scroller" ref={timelineRef}>
+					<div className="timeline-segments">
+						<TimelineSegment year="2025 - 2012" range="Present - Feb 2012" title="Miroma Project Factory" roles={["Tech Team Lead", "Senior Front-end Developer", "Designer & Developer"]} isHorizontal={true}></TimelineSegment>
+						<TimelineSegment year="2012 - 2010" range="Feb 2012 - Aug 2010" title="applabs" roles={["Senior Developer", "Technical Lead"]} isHorizontal={true}></TimelineSegment>
+						<TimelineSegment year="2010 - 2010" range="Aug 2010 - Apr 2010" title="Brighton Consulting" roles={["Web Developer", "Graphic Developer"]} isHorizontal={true}></TimelineSegment>
+						<TimelineSegment year="2010 - 2006" range="Mar 2010 - Mar 2006" title="Creative Intersection" roles={["Full-stack Designer Developer"]} isHorizontal={true}></TimelineSegment>
+						<TimelineSegment year="2006" range="2003 - 2006" title="Bachelor of Communications Design" roles={["QUT Brisbane"]} skills={[]} isHorizontal={true}></TimelineSegment>
+					</div>
+				</div>
+				<div className="timeline-controls carousel-controls">
+					<button className="left" onClick={() => timelineShift(false)}></button>
+					<button className="right" onClick={() => timelineShift(true)}></button>
+				</div>
+				<div className="link"><Link to="/career-timeline">... see detailed timeline</Link></div>
 			</section>
 			<section className="page-content section-web" id="section-web">
 				<SectionHeader>

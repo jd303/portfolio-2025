@@ -1,15 +1,59 @@
 .timeline-segment {
+	
 	position: relative;
 	display: block;
-	padding: calc(3 * var(--padding-standard)) 0 calc(3 * var(--padding-standard)) calc(9 * var(--padding-standard));
 
-	& .pipe {
-		position: absolute;
-		left: calc(5 * var(--padding-standard));
-		top: 0;
-		width: calc(2 * var(--padding-standard));
-		height: 100%;
-		background-color: var(--colour-primary-bright);
+	&[data-style="vert"] {
+		padding: calc(3 * var(--padding-standard)) 0 calc(3 * var(--padding-standard)) calc(9 * var(--padding-standard));
+
+		& .pipe {
+			position: absolute;
+			left: calc(5 * var(--padding-standard));
+			top: 0;
+			width: calc(2 * var(--padding-standard));
+			height: 100%;
+			background-color: var(--colour-primary-bright);
+		}
+
+		& .year {
+			position: absolute;
+			left: 0;
+			font-size: 0.9em;
+			font-weight: bold;
+		}
+	}
+
+	&[data-style="horz"] 
+	{
+		padding: 0 calc(4 * var(--padding-standard)) calc(4 * var(--padding-standard)) 0;
+		margin-right: 4px;
+
+		.pipe {
+			position: absolute;
+			left: 0;
+			bottom: calc(-2 * var(--padding-standard));
+			width: 100%;
+			height: var(--padding-standard);
+			box-sizing: border-box;
+			background-color: var(--colour-primary-bright);
+		}
+
+		& .year {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			font-size: 0.9em;
+			font-weight: bold;
+		}
+	}
+
+	&:first-child .pipe {
+		border-bottom: 2px solid white;
+	}
+
+	&:last-child {
+		padding-right: 0;
+		margin-right: 0;
 	}
 
 	&:nth-child(2n) {
@@ -17,13 +61,6 @@
 			opacity: 0.6;
 		}
 	}
-}
-
-.year {
-	position: absolute;
-	left: 0;
-	font-size: 0.9em;
-	font-weight: bold;
 }
 
 .block {
@@ -48,6 +85,8 @@
 
 	& .skills {
 		margin: var(--padding-standard) 0 0 0;
+
+		padding-left: 20px;
 
 		& li {
 			padding: 2px 0;

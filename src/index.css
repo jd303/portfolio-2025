@@ -73,6 +73,14 @@ html, body {
 		padding: 10px;
 		background-color: rgba(0, 0, 0, 0.2);
 
+		&.left {
+			margin-left: var(--padding-standard);
+		}
+
+		&.right {
+			margin-right: var(--padding-standard);
+		}
+
 		&:before {
 			content: "";
 			width: 10px;
