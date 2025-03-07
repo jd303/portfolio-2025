@@ -7,26 +7,30 @@
 	--vitae-grid-columns: 1fr;
 	--vitae-grid-row: auto;
 	--vitae-grid-1-column: 1; --vitae-grid-1-row: 1;
-	--vitae-grid-2-column: 1; --vitae-grid-2-row: 3;
-	--vitae-grid-3-column: 1; --vitae-grid-3-row: 2;
-	--vitae-grid-4-column: 1; --vitae-grid-4-row: 5;
-	--vitae-grid-5-column: 1; --vitae-grid-5-row: 4;
+	--vitae-grid-2-column: 1; --vitae-grid-2-row: 2;
+	--vitae-grid-3-column: 1; --vitae-grid-3-row: 3;
+	--vitae-grid-4-column: 1; --vitae-grid-4-row: 4;
+	--vitae-grid-5-column: 1; --vitae-grid-5-row: 5;
 	--vitae-grid-6-column: 1; --vitae-grid-6-row: 6;
+	--vitae-grid-7-column: 1; --vitae-grid-7-row: 7;
+	--vitae-grid-8-column: 1; --vitae-grid-8-row: 8;
 
 	@media (min-width: 1001px) {
 		--scroll-down-display: none;
 		--section-width: calc(100% + calc(6 * var(--padding-standard)));
-		--section-padding: calc(16 * var(--padding-standard)) calc(3 * var(--padding-standard));
+		--section-padding: calc(14 * var(--padding-standard)) calc(3 * var(--padding-standard));
 		--section-margin: calc(-3 * var(--padding-standard));
 		--vitae-grid-width: 1400px;
 		--vitae-grid-columns: 1fr 1fr 1fr;
-		--vitae-grid-rows: auto;
+		--vitae-grid-rows: 25px 1fr 25px 25px 1fr;
 		--vitae-grid-1-column: 1; --vitae-grid-1-row: 1;
-		--vitae-grid-2-column: 2; --vitae-grid-2-row: 1/4;
-		--vitae-grid-3-column: 3; --vitae-grid-3-row: 1/3;
-		--vitae-grid-4-column: 1; --vitae-grid-4-row: 2/6;
-		--vitae-grid-5-column: 2; --vitae-grid-5-row: 4/6;
-		--vitae-grid-6-column: 3; --vitae-grid-6-row: 3/6;
+		--vitae-grid-2-column: 1; --vitae-grid-2-row: 2/6;
+		--vitae-grid-3-column: 2; --vitae-grid-3-row: 1;
+		--vitae-grid-4-column: 2; --vitae-grid-4-row: 2;
+		--vitae-grid-5-column: 2; --vitae-grid-5-row: 3;
+		--vitae-grid-6-column: 2; --vitae-grid-6-row: 4/6;
+		--vitae-grid-7-column: 3; --vitae-grid-7-row: 1;
+		--vitae-grid-8-column: 3; --vitae-grid-8-row: 2/6;
 	}
 }
 
@@ -50,6 +54,10 @@ menu {
 			font-weight: bold;
 		}
 	}
+}
+
+strong {
+	font-weight: 600;
 }
 
 .intro {
@@ -96,8 +104,28 @@ section {
 
 	&.section-vitae {
 		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
 		gap: calc(3 * var(--padding-standard));
 		font-weight: 400;
+
+		& .vitae-heading {
+			width: var(--vitae-grid-width);
+
+			@media (max-width: 1491px) {
+				width: 100%;
+			}
+
+			& .vitae-subheading {
+				font-size: 1em;
+				margin-bottom: var(--padding-standard);
+			}
+
+			& .vitae-main-heading {
+				font-size: 2em;
+				font-weight: bold;
+			}
+		}
 
 		& .vitae-grid {
 			flex-basis: 100%;
@@ -107,11 +135,32 @@ section {
 			gap: calc(2 * var(--padding-standard));
 			max-width: var(--vitae-grid-width);
 
-			& .vitae-cell:not(:first-of-type) {
+			& .vitae-cell {
 				color: var(--colour-dark);
-				padding: calc(2 * var(--padding-standard));
+				padding: calc(1.25 * var(--padding-standard));
 				border-radius: var(--padding-standard);
 				background-color: #fff;
+
+				& .bubble-thing div.margined-row {
+					margin-bottom: 8px;
+				}
+
+				& .tool-image {
+					display: inline-block;
+					vertical-align: top;
+					margin-right: var(--padding-standard);
+				}
+
+				& img {
+					display: inline;
+					height: 35px;
+				}
+			}
+
+			& .flexing {
+				display: flex;
+				flex-direction: column;
+				gap: var(--padding-standard);
 			}
 
 			& .vitae-cell-1 {
@@ -132,10 +181,6 @@ section {
 			& .vitae-cell-4 {
 				grid-column: var(--vitae-grid-4-column);
 				grid-row: var(--vitae-grid-4-row);
-
-				display: flex;
-				flex-direction: column;
-				gap: var(--padding-standard);
 			}
 
 			& .vitae-cell-5 {
@@ -148,21 +193,21 @@ section {
 				grid-row: var(--vitae-grid-6-row);
 			}
 
+			& .vitae-cell-7 {
+				grid-column: var(--vitae-grid-7-column);
+				grid-row: var(--vitae-grid-7-row);
+			}
+
+			& .vitae-cell-8 {
+				grid-column: var(--vitae-grid-8-column);
+				grid-row: var(--vitae-grid-8-row);
+			}
+
 			& .vitae-grid-title {
 				font-size: 1.1em;
 				font-weight: 500;
 				min-height: 30px;
 				margin-bottom: calc(var(--padding-standard) / 2);
-			}
-
-			& .vitae-subheading {
-				font-size: 1em;
-				margin-bottom: var(--padding-standard);
-			}
-
-			& .vitae-heading {
-				font-size: 2em;
-				font-weight: bold;
 			}
 
 			& .vitae-bubbles {
@@ -172,9 +217,25 @@ section {
 			}
 
 			& .vitae-tools {
-				display: flex;
-				flex-wrap: wrap;
-				gap: var(--padding-standard);
+				& .vitae-tools-description {
+					display: flex;
+					justify-content: space-between;
+					flex-basis: 100%;
+
+					& div:first-child {
+						font-weight: 500;
+					}
+
+					& div:last-child {
+						text-align: right;
+					}
+				}
+
+				& .vitae-tools-details {
+					display: flex;
+					flex-wrap: wrap;
+					gap: var(--padding-standard);
+				}
 
 				& img {
 					height: 50px;
@@ -193,8 +254,19 @@ section {
 
 				& .vitae-tools-addendum {
 					display: flex;
-					align-items: flex-end;
+					justify-content: flex-end;
 					font-size: 1.2em;
+					text-align: right;
+
+					& a {
+						color: var(--colour-primary);
+						text-decoration: none;
+						transition: all 0.2s;
+
+						&:hover {
+							font-weight: 500;
+						}
+					}
 				}
 			}
 		}
@@ -240,6 +312,7 @@ section {
 			min-width: 100%;
 			max-width: 500px;
 			margin: auto;
+			padding-top: calc(2 * var(--padding-standard));
 
 			& .vitae-references-content {
 				display: flex;
@@ -264,7 +337,7 @@ section {
 				font-size: 1.3em;
 				color: var(--colour-light);
 				text-decoration: none;
-				transition: all 0.2s;
+				transition: all 0.15s;
 
 				& img {
 					height: 50px;
@@ -273,6 +346,61 @@ section {
 				& p {
 					margin: 0;
 				}
+
+				&:hover {
+					transform: scale(1.02);
+				}
+			}
+		}
+	}
+
+	&.section-timeline {
+		--min-width-segment: 100%;
+
+		@media (min-width: 1001px) {
+			--min-width-segment: 330px;
+		}
+
+		flex-direction: column;
+
+		& .timeline-scroller {
+			padding-bottom: calc(3 * var(--padding-standard));
+			overflow-x: hidden;
+			overflow-y: hidden;
+			scroll-snap-type: x mandatory;
+
+			& .timeline-segments {
+				display: flex;
+				align-items: stretch;
+
+				& .timeline-segment {
+					min-width: var(--min-width-segment);
+					scroll-snap-align: start;
+					box-sizing: border-box;
+
+					&:not(:first-of-type) {
+						padding-top: 30px;
+					}
+				}
+			}
+		}
+
+		& .timeline-controls {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: var(--padding-standard);
+			width: 100%;
+			padding: 8px calc(2 * var(--padding-standard)) calc(2 * var(--padding-standard));
+		}
+
+		& .link {
+			width: 200px;
+
+			& a {
+				color: #fff;
+				text-decoration: none;
+				transition: all 0.2s;
 
 				&:hover {
 					font-weight: 500;
@@ -300,10 +428,6 @@ section {
 	&.section-web {
 		display: flex;
 		gap: var(--padding-standard);
-
-		@media (min-width: 1001px) {
-			padding: calc(8 * var(--padding-standard)) calc(3 * var(--padding-standard));
-		}
 	}
 
 	&.section-visualisations {

@@ -17,4 +17,9 @@
 		color: var(--colour-light);
 		background-color: var(--colour-primary);
 	}
+
+	&[attr-color="faint"] {
+		color: var(--colour-dark);
+		background-color: #f7f7f7;
+	}
 }

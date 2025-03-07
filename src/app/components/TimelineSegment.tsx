@@ -5,13 +5,14 @@ type Props = {
 	range: string;
 	title: string;
 	roles: string[];
-	skills: string[];
+	skills?: string[];
+	isHorizontal?: boolean;
 }
 
-function Highlight({ year, range, title, roles, skills }: Props) {
+function Highlight({ year, range, title, roles, skills, isHorizontal = false }: Props) {
 
 	return (
-		<div className="timeline-segment">
+		<div className="timeline-segment" data-style={isHorizontal && 'horz' || 'vert'}>
 			<span className="year">{year}</span>
 			<div className="pipe"></div>
 			<div className="block">
@@ -23,7 +24,7 @@ function Highlight({ year, range, title, roles, skills }: Props) {
 					))
 				}</div>
 				<ul className="skills">{
-					skills.map((skill: string, index: number) => (
+					skills?.map((skill: string, index: number) => (
 						<li className="skill" key={"skill"+title+index}>{skill}</li>
 					))
 				}</ul>
