@@ -256,8 +256,13 @@
 .app-row-toggle-mobile {
 	display: var(--app-row-toggle-display-mobile);
 	z-index: 100;
-	bottom: -20px;
+	bottom: -30px;
 	right: 50%;
-	background-color: rgba(255, 255, 255, 0.2);
+	font-size: 1.4rem;
+	background-color: var(--colour-primary);
 	transform: translateX(50%);
+
+	&:hover {
+		background-color: var(--colour-primary);
+	}
 }

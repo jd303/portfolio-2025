@@ -3,6 +3,7 @@
 	flex-wrap: wrap;
 	gap: calc(4 * var(--padding-standard));
 	position: relative;
+	max-width: 1500px;
 	margin-bottom: calc(6 * var(--padding-standard));
 
 	& hr {

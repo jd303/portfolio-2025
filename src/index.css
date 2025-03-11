@@ -14,7 +14,7 @@
 	--colour-dark: rgb(30, 30, 30);
 	--colour-light: rgb(220, 220, 220);
 	--background-colour: #222;
-	--font-size-base: 0.9em;
+	--font-size-base: 0.95em;
 	--only-mobile-display: block;
 
 	@media (min-width: 1001px) {

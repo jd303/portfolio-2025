@@ -93,7 +93,7 @@ function Home() {
 					<br />
 					I'm a Senior Software Engineer with a front-end web and app focus.  I'm looking for my next great role.
 					<br /><br />
-					<div>Please, get in touch.</div>
+					<div>Please, <Link to="https://www.linkedin.com/in/joel-dawson-32876934/" target="_blank">get in touch</Link>.</div>
 				</div>
 				<div className="menu">
 					<menu>
@@ -148,7 +148,7 @@ function Home() {
 						</div>
 					</div>
 					<div className="vitae-tools-row vitae-cell-7">
-						<div className="vitae-grid-title">🛠️ Technical Skills</div>
+						<div className="vitae-grid-title">🛠️ Technical Skills (Excerpt)</div>
 					</div>
 					<div className="vitae-cell vitae-cell-8">
 						<div className="vitae-tools flexing">
@@ -311,12 +311,13 @@ function Home() {
 					<span>V</span><span>I</span><span>S</span><span>U</span><span>A</span><span>L</span><span>I</span><span>S</span><span>A</span><span>T</span><span>I</span><span>O</span><span>N</span><span>S</span>
 				</SectionHeader>
 				<div className="visualisations-title">ThreeJS and Canvas visualisations + interactives.</div>
-				<p className="only-mobile">(Best used with mouse)</p>
 				<p>Clipped text and mouse-path graphic, for website header. &lt;canvas&gt;</p>
+				<p className="only-mobile">(Automated when no mouse present)</p>
 				<iframe src="/snake-visualisation" className="snake-visualisation"></iframe>
 				<p>Animated trainer with API to schedule hundreds of exercise animations.  ThreeJS.</p>
 				<iframe src="/exerciser" className="exerciser-visualisation"></iframe>
 				<p>An animated website background. ThreeJS.</p>
+				<p className="only-mobile">(Automated when no mouse present)</p>
 				<iframe src="/triangular" className="triangular-frame-visualisation"></iframe>
 			</section>
 			<section className="page-content section-ai" id="section-ai">
@@ -324,10 +325,10 @@ function Home() {
 					<span>A</span><span>I</span>
 				</SectionHeader>
 				<InformativeVideo title="Monarch Athletic Club" desc="An LLM Agent which guides users through their health struggles, and offers advice and Monarch services with a friendly tone and disposition.">
-					<video src={monarchLLM} loop={true} autoPlay={true} muted></video>
+					<video src={monarchLLM} loop={true} autoPlay={true} controls muted></video>
 				</InformativeVideo>
 				<InformativeVideo title="Sydney Ethics Centre" desc="A personalised discovery of self, this LLM Agent analyses Ethics materials and compares them to the user's selections, determining the options on future pages.">
-					<video src={HILLM} loop={true} autoPlay={true} muted></video>
+					<video src={HILLM} loop={true} autoPlay={true} controls muted></video>
 				</InformativeVideo>
 			</section>
 			<section className="section-fin">
